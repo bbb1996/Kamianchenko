@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Kamianchenko</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <i>NaCesty</i>
+      </h1>
+      <a href="https://gist.github.com/bbb1996/9dbf494b760d0200fbf88cfbbf9bb39c">Projekt na GitHub</a>
+      <nav>
+        <ul>
+          <li> <a href="#uvod">Úvod</a></li>
+          <li> <a href="#metodika">Metodika</a> </li>
+          <li> <a href="#elem">Elementy a atributy</a></li>
+          <li>
+            <a href="#trans">Transformace</a>
+          </li>
+          <li> <a href="#zaver">Závěr</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article><h2 id="uvod"><i>Úvod</i></h2><p>NaCesty je aplikace pro navigace. V projektu je popsaná hlavní stránka,prvky,jejich rozmístění a základní nastavení aplikace.</p>  
+</article>
+        <article>
+          <h2 id="metodika">
+            <i>Metodika</i>
+          </h2>
+          <p>Aplikace se skládá z <b>hlavní stránky,nastavení</b> a <b>navigace</b>.<br />Na <u>hlavní stránce</u> jsou umistěné:<ul><li>Mapa-zobrazení Váší nynější polohy.</li><li>Rychlý výběr-zobrazení dříve vyhledávaných míst</li><li>Pohyblivý řádek-upozornění aplikací, které jsou umístěné v pozadí pod mapou</li></ul><br />Po stisknutí tlačítka "nastavení", se objeví  <u>nastavení </u>,které se dělí na:<ul>Obecné:<li>Řeč</li><li> Hlasitost</li><li> Návod</li><li> Jednotky měření</li><li> Ekonomie</li></ul><ul>Oznámení:<br /><li> Radary</li><li> Překročení rychlosti </li></ul><br />
+<u>Navigace</u> se zapíná automaticky po nastavení cíle. Z rychlého výběru si můžete vybrat již vyhledávanou adresu nebo <u>zadat novou</u>. Pro vytvoření nové adresy je zapotřebí vyplnit alespoň položky <i>adresa</i> a <i>název</i>. Také můžete uvést telefonní číslo,webovou adresu a E-mail.<br />
+Po zadání adresy aplikace nabízí režim dopravy:  <b>pěšky</b> nebo <b>autem</b>. Při zvolení cesty autem lze vyloučit cesty, které obsahují:<ul><li>Placené úseky</li><li>Silniční magistrály</li><li>Přívozy</li></ul><br />
+Dalším krokem je výběr cesty. Aplikace nabízí několik variant. V levé části obrazovky jsou umístěné zbývající  <i>kilometry do cíle</i>  a <i>čas</i>.</p>
+        </article>
+        <article>
+          <h2 id="elem">
+            <i>Elementy a atributy</i>
+          </h2>
+          <table border="1" style="font:18px verdana">
+            <tr bgcolor="yellow"></tr>
+            <tr>
+              <th>Element</th>
+              <th>Popis</th>
+            </tr>
+            <tr>
+              <td>Nacesty</td>
+              <td>Název aplikace</td>
+            </tr>
+            <tr>
+              <td>hlavni_stranka</td>
+              <td>Potomek elementu "Nacesty".Hlavní stránka aplikace a její prvky</td>
+            </tr>
+            <tr>
+              <td>mapa</td>
+              <td>Potomek elementu "hlavni_stranka".Popis vzhledu mapy</td>
+            </tr>
+            <tr>
+              <td>rozmisteni</td>
+              <td>Potomek elementu "mapa".Rozmistění mapy</td>
+            </tr>
+            <tr>
+              <td>barva</td>
+              <td>Potomek elementu "mapa".Barva mapy</td>
+            </tr>
+            <tr>
+              <td>poloha</td>
+              <td>Potomek elementu "mapa".Označení Vaší nynější polohy</td>
+            </tr>
+            <tr>
+              <td>oznaceni</td>
+              <td>Potomek elementu "poloha".Poloha je zobranena šipkou v kroužku</td>
+            </tr>
+            <tr>
+              <td>ulice</td>
+              <td>Potomek elementu "poloha".Popisuje vzhled nynější ulice na mapě.</td>
+            </tr>
+            <tr>
+              <td>barva_pismen</td>
+              <td>Potomek elementu "ulice".Pismena na mapě jsou bilá.</td>
+            </tr>
+            <tr>
+              <td>velikost_pismen</td>
+              <td>Potomek elementu "ulice".Velikost písmen na mapě je 9.</td>
+            </tr>
+            <tr>
+              <td>volba</td>
+              <td>Potomek elementu "hlavni_stranka".Umožňuje rychlý výběr cílové adresy.</td>
+            </tr>
+            <tr>
+              <tr>
+                <td>obrazek</td>
+                <td>Potomek elementu "volba".Ikona,která označuje rychlé vyhledávání.</td>
+              </tr>
+              <tr>
+                <td>nabidka</td>
+                <td>Potomek elementu "volba".Nabídka rychlého vyhledávání.</td>
+              </tr>
+              <tr>
+                <td>dum</td>
+                <td>Potomek elementu "nabidka".Popisuje domácí adresu uloženou v paměti aplikace .</td>
+              </tr>
+              <tr>
+                <td>ulozeno</td>
+                <td>Potomek elementu "dum".Uložená domácí adresa.</td>
+              </tr>
+              <tr>
+                <td>adresa</td>
+                <td>Potomek elementu "ulozeno".Název domácí adresy.</td>
+              </tr>
+              <tr>
+                <td>trasa</td>
+                <td>Potomek elementu "ulozeno".Spojení výchozího bodu a domácí adresy</td>
+              </tr>
+              <tr>
+                <td>ukazat</td>
+                <td>Potomek elementu "ulozeno".Zobrazení domácí adresy pomocí ikony modrého domečku.</td>
+              </tr>
+              <tr>
+                <td>popis</td>
+                <td>Potomek elementu "ukazat".Zobrazení názvu ulice na mapě.</td>
+              </tr>
+              <tr>
+                <td>nastavit</td>
+                <td>Potomek elementu "dum".Založení nové adresy</td>
+              </tr>
+              <tr>
+                <td>popsani</td>
+                <td>Potomek elementu "nastavit".Pojmenování cílové adresy(dům,práce atd)</td>
+              </tr>
+              <tr>
+                <td>telefon</td>
+                <td>Potomek elementu "nastavit".Telefonní číslo</td>
+              </tr>
+              <tr>
+                <td>posta</td>
+                <td>Potomek elementu "nastavit".E-mail</td>
+              </tr>
+              <tr>
+                <td>www</td>
+                <td>Potomek elementu "nastavit".Webová adresa</td>
+              </tr>
+              <tr>
+                <td>ulozeni</td>
+                <td>Potomek elementu "nastavit".Popis tlačitka, kterým uložíte novou zadanou adresu</td>
+              </tr>
+              <tr>
+                <td>barva</td>
+                <td>Potomek elementu "ulozeni".Tlačítko "uložit" je modré barvy.</td>
+              </tr>
+              <tr>
+                <td>rozmisteni</td>
+                <td>Potomek elementu "ulozeni".Tlačítko se nachází v dolní části.</td>
+              </tr>
+              <tr>
+                <td>ikona</td>
+                <td>Potomek elementu "ulozeni".Uložení je představeno tlačítkem.</td>
+              </tr>
+              <tr>
+                <td>cil</td>
+                <td>Potomek elementu "volba".Místa,která jste vyhledávali.</td>
+              </tr>
+              <tr>
+                <td>format</td>
+                <td>Potomek elementu "cil".Vzhled míst,která jste navštívili.</td>
+              </tr>
+              <tr>
+                <tr>
+                  <td>tlacitko_cesta</td>
+                  <td>Potomek elementu "popis".Tlačitko,které spojuje místo,kde se nacházíte a cílovou adresu</td>
+                </tr>
+                <tr>
+                  <td>tlacitko_info</td>
+                  <td>Potomek elementu "popis".Popis cílového místa</td>
+                </tr>
+                <tr>
+                  <td>oznameni</td>
+                  <td>Potomek elementu "hlavni_stranka".Aplikace nahlašuje problém(není síť, není zapnuté GPS, změna cesty ).</td>
+                </tr>
+                <tr>
+                  <td>rozlozeni</td>
+                  <td>Potomek elementu "oznameni".Upozornění jsou umistěna dole pod mapou.</td>
+                </tr>
+                <tr>
+                  <td>vzhled</td>
+                  <td>Potomek elementu "oznameni".Upozornění jsou uvedena pomocí pohybujícího se řádku</td>
+                </tr>
+                <tr>
+                  <td>nastaveni</td>
+                  <td>Potomek elementu "Nacesty".Popis nastavení aplikace.</td>
+                </tr>
+                <tr>
+                  <td>obecne</td>
+                  <td>Potomek elementu "nastaveni".Kategorie obecných nastavení</td>
+                </tr>
+                <tr>
+                  <td>rec</td>
+                  <td>Potomek elementu "obecne".Jazyk,používaný aplikací.</td>
+                </tr>
+                <tr>
+                  <td>hlas_aplikaci</td>
+                  <td>Potomek elementu "rec".Jazyky, které obsahuje aplikace.</td>
+                </tr>
+                <tr>
+                  <td>hlas_systemu</td>
+                  <td>Potomek elementu "rec".Jazyky, které obsahuje systém.</td>
+                </tr>
+                <tr>
+                  <td>hlasitost</td>
+                  <td>Potomek elementu "obecne".Hlasitost řeči v aplikaci.</td>
+                </tr>
+                <tr>
+                  <td>instrukce</td>
+                  <td>Potomek elementu "obecne".Návod na použítí.</td>
+                </tr>
+                <tr>
+                  <td>ekonomie</td>
+                  <td>Potomek elementu "obecne".Ekonomie energie na telefonu.</td>
+                </tr>
+                <tr>
+                  <td>jednotky</td>
+                  <td>Potomek elementu "obecne".Výběr jednotek měření vzdálenosti.</td>
+                </tr>
+                <tr>
+                  <td>varianty</td>
+                  <td>Potomek elementu "jednotky".Lze nastavít buď metrické nabo imperiální systém výpočtu.</td>
+                </tr>
+                <tr>
+                  <td>oznameni</td>
+                  <td>Potomek elementu "nastaveni".Upozornění na silniční radary a překročení povolené rychlosti.</td>
+                </tr>
+                <tr>
+                  <td>navigace</td>
+                  <td>Potomek elementu "hlavni_stranka".Popisuje proces navigace.</td>
+                </tr>
+                <tr>
+                  <td>planovani</td>
+                  <td>Potomek elementu "navigace".Planování cesty</td>
+                </tr>
+                <tr>
+                  <td>poloha</td>
+                  <td>Potomek elementu "planovani".Nynější poloha</td>
+                </tr>
+                <tr>
+                  <td>konec</td>
+                  <td>Potomek elementu "planovani".Cílová poloha</td>
+                </tr>
+                <tr>
+                  <td>rezim</td>
+                  <td>Potomek elementu "planovani".Aplikace obsahuje 2 režimy:cesta autem a cesta pěsky.</td>
+                </tr>
+                <tr>
+                  <td>poplatek</td>
+                  <td>Potomek elementu "rezim".Možnost vyloučení dálnic s poplatkem</td>
+                </tr>
+                <tr>
+                  <td>magistrala</td>
+                  <td>Potomek elementu "rezim".Možnost vyloučení silničných magistrál.</td>
+                </tr>
+                <tr>
+                  <td>privoz</td>
+                  <td>Potomek elementu "rezim".Možnost vyloučení přívozu.</td>
+                </tr>
+                <tr>
+                  <td>trat</td>
+                  <td>Potomek elementu "navigace".Výběr cest, které aplikace nabízí.</td>
+                </tr>
+                <tr>
+                  <td>odbocka</td>
+                  <td>Potomek elementu "trat".Aplikace upozorňuje za kolik kilometrů(resp.metrů) bude odbočka</td>
+                </tr>
+                <tr>
+                  <td>cesta</td>
+                  <td>Potomek elementu "trat".Popisuje kolik zústává kilometrů,hodin(resp.minut) do cílového bodu.</td>
+                </tr>
+              </tr>
+            </tr>
+          </table>
+          <br />
+          <i>Celkový počet elementů:</i>
+          <b>57</b>
+          <br />
+          <br />
+          <table border="1" style="font:18px verdana">
+            <tr bgcolor="pink"></tr>
+            <tr>
+              <th>Element</th>
+              <th>Atribut</th>
+              <th>Hodnota(y) atributu</th>
+              <th>Popis</th>
+            </tr>
+            <tr>
+              <td>ulice</td>
+              <td>nazev</td>
+              <td>"Název ulice,kde se nacházíte"</td>
+              <td>Popis vzhledu ulice na mapě</td>
+            </tr>
+            <tr>
+              <td>volba</td>
+              <td>cil</td>
+              <td>"Rychlé vyhledávání"</td>
+              <td>Zobrázení míst,které jste vyhledavali.</td>
+            </tr>
+            <tr>
+              <td>cil</td>
+              <td>historie</td>
+              <td>"Místa,která jste vyhledáváli"</td>
+              <td>Popis vzhledu adres v rychlém vyhledávání</td>
+            </tr>
+            <tr>
+              <td>oznameni</td>
+              <td>text</td>
+              <td>"Nahlášení problému,změna cesty"</td>
+              <td>Pohyblivý řádek pod mapou, který upozorňuje na problémy</td>
+            </tr>
+            <tr>
+              <td>rec</td>
+              <td>automat</td>
+              <td>"Ruština"</td>
+              <td>Automaticky nastavený jazyk=ruština.</td>
+            </tr>
+            <tr>
+              <td>jednotky</td>
+              <td>mereni</td>
+              <td>"Metrické"</td>
+              <td>Automaticky nastavené jednotky měření vzdálenosti=metrické</td>
+            </tr>
+            <tr>
+              <td>kamery</td>
+              <td>zvuk</td>
+              <td>"Vizuální a zvukové"</td>
+              <td>Aplikace upozorňuje na silniční radary vizuálně a zvukově</td>
+            </tr>
+            <tr>
+              <td>kamery</td>
+              <td>viz</td>
+              <td>"Vizuální"</td>
+              <td>Aplikace upozorňuje na silniční radary pouze vizuálně</td>
+            </tr>
+            <tr>
+              <td>rezim</td>
+              <td>pesky</td>
+              <td>"Cesta pěšky"</td>
+              <td>Plánování cesty pěšky</td>
+            </tr>
+            <tr>
+              <td>rezim</td>
+              <td>auto</td>
+              <td>"Cesta autem"</td>
+              <td>Planování cesty autem</td>
+            </tr>
+            <tr>
+              <td>trat</td>
+              <td>vyber</td>
+              <td>"výběr cesty z nabízených"</td>
+              <td>Aplikace nabízí několik cest(většinou), které se liší délkou/časem a Vy si můžete vybrat nejoptimálnější pro Vás</td>
+            </tr>
+          </table>
+          <br />
+          <i>Celkový počet atributů:</i>
+          <b>11</b>
+        </article>
+        <article><h2 id="trans"><i>Transformace</i></h2><p>Transformace jsou vytvořené pomocí cyklu <i>for-each</i>, výsledkem je tabulka,která představuje základní nastavení a jejich hodnoty. Druhá čast popisuje vzhled stránky pro plánování cesty a je také vytvořena pomocí for-each a value-of.</p>  
+</article>
+        <article><h2 id="zaver"><i>Závěr</i></h2><p>K vytvoření této semestrální práce byly použity následující stránky:<a href="https://moodle.czu.cz/course/view.php?id=8190">cvičení</a> a <a href="https://www.w3schools.com/xml/default.asp">w3schools.</a></p>  
+</article>
+      </section>
+    </main>
+    <footer>
+      <p>&copy;  Anastasiia Kamianchenko</p>
+    </footer>
+  </body>
+</html>

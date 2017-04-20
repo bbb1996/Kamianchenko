@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Nacesty>
+  <hlavni_stranka>
+    <mapa>
+      <rozmisteni>Centrum obrazovky</rozmisteni>
+      <barva>Cerno-bila</barva>
+      <poloha>
+        <oznaceni>Sipka v sedivem krouzku</oznaceni>
+        <ulice nazev="Nazev ulici,kde se nachazite">
+          <barva_pismen>bila</barva_pismen>
+          <velikost_pismen>9</velikost_pismen>
+        </ulice>
+      </poloha>
+    </mapa>
+    <volba cil="Rychle vyhledavani">
+      <rozmisteni>Nahore vpravo</rozmisteni>
+      <obrazek>Zvetsovaci sklo</obrazek>
+      <nabidka>
+        <dum>
+          <ulozeno>
+            <adresa>Domaci adresa</adresa>
+            <trasa>Spojovani vychoziho bodu a adresy domu</trasa>
+            <ukazat>
+              <obrazek>Modry domecek</obrazek>
+              <popis>Domaci adresa</popis>
+            </ukazat>
+          </ulozeno>
+          <nastavit>
+            <popsani>Pojmenovani cilove adresy</popsani>
+            <telefon>Telefonni cislo</telefon>
+            <posta>E-mail</posta>
+            <www>Webova adresa</www>
+            <ulozeni>
+              <barva>Modra</barva>
+              <rozmisteni>dolu</rozmisteni>
+              <ikona>Tlacitko</ikona>
+            </ulozeni>
+          </nastavit>
+        </dum>
+      </nabidka>
+      <cil historie="Mista,ktere jste vyhledavali">
+        <format>Seznam</format>
+        <popis nazev="Ulice" dalka="Ukazuje jak jste daleko od cilu v km">
+          <tlacitko_cesta>Spojeni vybrane adresy a  mista kde se nachazite</tlacitko_cesta>
+          <tlacitko_info>Popis ciloveho mista</tlacitko_info>
+        </popis>
+      </cil>
+    </volba>
+    <oznameni text="Nahlaseni problemu,zmena cesty">
+      <rozlozeni>Dolu</rozlozeni>
+      <vzhled>Pohybujici se radek</vzhled>
+    </oznameni>
+  </hlavni_stranka>
+  <nastaveni>
+    <obecne>
+      <rec automat="Rustina">
+        <hlas_aplikaci>Anglicky,Cesky,Slovensky jazyk</hlas_aplikaci>
+        <hlas_systemu>Jazyky,ktere mate naistalovane na telefonu</hlas_systemu>
+      </rec>
+      <hlasitost>100</hlasitost>
+      <instrukce>Ano/Ne</instrukce>
+      <ekonomie>Ano/Ne</ekonomie>
+      <jednotky mereni="Metricke">
+        <varianty>Metricke, Imperialni</varianty>
+      </jednotky>
+    </obecne>
+    <oznameni>
+      <kamery viz="Vizualni" zvuk="Vizualni a zvukovi">
+        <zprava>Ano/Ne</zprava>
+      </kamery>
+    </oznameni>
+  </nastaveni>
+  <navigace>
+    <planovani>
+      <poloha>Nynejsi poloha</poloha>
+      <konec>Cilova poloha</konec>
+      <rezim auto="Cesta autem" pesky="Cesta pesky">
+        <poplatek>Vyloucit dalnici s poplatkem</poplatek>
+        <magistrala>Vyloucit silnicni magistraly</magistrala>
+        <privoz>Vyloucit privozy</privoz>
+      </rezim>
+    </planovani>
+    <trat vyber="Vyber cesty z nabizenych">
+      <odbocka>Vzdalenost do nejblizsi odbocky</odbocka>
+      <cesta>Popisuje kolik zustalo projet kilometru a kolik minut/hodin</cesta>
+    </trat>
+  </navigace>
+</Nacesty>

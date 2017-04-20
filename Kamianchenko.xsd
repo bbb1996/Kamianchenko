@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!--Kategorie aplikaci-->
+  <xs:element name="Nacesty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hlavni_stranka"/>
+        <xs:element name="nastaveni"/>
+        <xs:element name="navigace"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--popis hlavni stranky-->
+  <xs:element name="hlavni_stranka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mapa"/>
+        <xs:element name="volba"/>
+        <xs:element name="oznameni"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Popis mapy,ktera se zobrazuje na hlavni strance-->
+  <xs:element name="mapa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rozmisteni" type="rozmisteni"/>
+        <xs:element name="barva" type="xs:string"/>
+        <xs:element name="poloha"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Ikona  ukazujici polohu-->
+  <xs:element name="poloha">
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0">
+        <xs:element name="oznaceni" type="xs:string"/>
+        <xs:element name="ulice" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Oznaceni ulici,ve ktere se nachazite-->
+  <xs:element name="ulice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="barva_pismen" type="xs:string"/>
+        <xs:element name="velikost_pismen" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Rychla volba-->
+  <xs:element name="volba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rozmisteni" type="rozmisteni"/>
+        <xs:element name="obrazek" type="xs:string"/>
+        <xs:element ref="nabidka"/>
+        <xs:element name="cil"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Vyber cilu-->
+  <xs:element name="nabidka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dum"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--"Dum" je domaci adresa,kterou si muzete nastavit a ulozit-->
+  <xs:element name="dum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ulozeno"/>
+        <xs:element ref="nastavit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ulozeno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="adresa" type="xs:string"/>
+        <xs:element name="trasa" type="xs:string"/>
+        <xs:element name="ukazat"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Pri zadani nazvu ulici, muzete videt na mape jak ulice vypada-->
+  <xs:element name="ukazat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="obrazek" type="xs:string"/>
+        <xs:element name="popis"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Ukazuje mista,ktere jste vyhledavali a jak jste daleko od toho mista-->
+  <xs:element name="popis">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element name="tlacitko_cesta" type="xs:string"/>
+        <xs:element name="tlacitko_info" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Nastaveni fixovane adresy s vlastnim popisem-->
+  <xs:element name="nastavit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="popsani" type="xs:string"/>
+        <xs:element name="telefon" type="xs:integer"/>
+        <xs:element name="posta" type="xs:string"/>
+        <xs:element name="www" type="xs:string"/>
+        <xs:element name="ulozeni"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Ulozeni ixovane adresy-->
+  <xs:element name="ulozeni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="barva" type="xs:string"/>
+        <xs:element name="rozmisteni" type="rozmisteni"/>
+        <xs:element name="ikona" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Nastaveni ciloveho mista-->
+  <xs:element name="cil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="format" type="xs:string"/>
+        <xs:element name="popis"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Nastaveni pristupu k oznamenim-->
+  <xs:element name="oznameni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="kamery"/>
+        <xs:element name="rozlozeni" type="rozlozeni"/>
+        <xs:element name="vzhled" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nastaveni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="obecne"/>
+        <xs:element name="oznameni"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Obecne nastaveni aplikace-->
+  <xs:element name="obecne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rec"/>
+        <xs:element name="hlasitost" type="xs:integer"/>
+        <xs:element name="instrukce" type="xs:boolean"/>
+        <xs:element name="ekonomie" type="xs:boolean"/>
+        <xs:element name="jednotky"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Volba jazyku navigace-->
+  <xs:element name="rec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hlas_aplikaci" type="hlas" fixed="Rustina"/>
+        <xs:element name="hlas_systemu" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Jednotky mereni vzdalenosti-->
+  <xs:element name="jednotky">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="varianty" type="mereni" fixed="Metricke"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Aplikace upozornuje o kamerech na silnicich bud vizualne nebo vizualne a zvukove-->
+  <xs:element name="kamery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="zprava" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Nastaveni navigace-->
+  <xs:element name="navigace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="planovani"/>
+        <xs:element name="trat"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="planovani">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="poloha"/>
+        <xs:element name="konec" type="xs:string"/>
+        <xs:element name="rezim"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Podminky vyberu cesty-->
+  <xs:element name="rezim">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="poplatek" type="xs:string"/>
+        <xs:element name="magistrala" type="xs:string"/>
+        <xs:element name="privoz" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Upozorneni pri navigaci-->
+  <xs:element name="trat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="odbocka" type="odbocka"/>
+        <xs:element name="cesta" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Seznam atributu-->
+  <xs:attribute name="cil" type="xs:string" use="required"/>
+  <xs:attribute name="nazev" type="xs:string" use="required"/>
+  <xs:attribute name="cil" type="xs:string" use="required"/>
+  <xs:attribute name="dalka" type="xs:integer"/>
+  <xs:attribute name="nazev" type="xs:string"/>
+  <xs:attribute name="historie" type="xs:string" use="required"/>
+  <xs:attribute name="text" type="xs:string"/>
+  <xs:attribute name="automat" type="automat" use="required"/>
+  <xs:attribute name="mereni" type="mereni" use="required"/>
+  <xs:attribute name="viz" type="xs:string" use="required"/>
+  <xs:attribute name="zvuk" type="xs:string" use="required"/>
+  <xs:attribute name="auto" type="xs:string" use="required"/>
+  <xs:attribute name="pesky" type="xs:string" use="required"/>
+  <xs:attribute name="vyber" type="xs:string" use="required"/>
+  <!--Nastaveni-->
+  <!--Rozmisteni po obrazovce-->
+  <xs:simpleType name="rozmisteni">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Centrum obrazovky"/>
+      <xs:enumeration value="Nahore"/>
+      <xs:enumeration value="Vpravo"/>
+      <xs:enumeration value="Dolu"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Upozorneni o odbocce-->
+  <xs:simpleType name="odbocka">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
